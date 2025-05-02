@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NotMath</title>
     <link rel="stylesheet" href="../static/stylesheet/main.css">
     <link rel="stylesheet" href="../static/stylesheet/home.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
-    <img src="../static/asset/person.png" alt="Person">
-    <div class="title">
-        <p>Welcome to</p>
-        <p><span>NotMath</span> Flashcard Game</p>
+    <div data-aos="fade-down">
+        <img src="../static/asset/person.png" alt="Person">
     </div>
-    <form action="{{ url_for('quizPage') }}">
-        <button class="restart-btn" type="submit">Let's Start!!</button>
-    </form>
+    <div data-aos="fade-up">
+        <div class="title">
+            <p>Welcome to</p>
+            <p><span>NotMath</span> Flashcard Game</p>
+        </div>
+    </div>
+    <div data-aos="fade-up-right">
+        <form action="{{ url_for('quizPage') }}">
+            <button class="restart-btn" type="submit">Let's Start!!</button>
+        </form>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
+
 </html>

@@ -29,18 +29,16 @@
         <div class="feedback">{{ feedback }}</div>
         {% endif %}
     </div>
-
     <div class="des1">
         <img src="../static/asset/des.png" alt="Desperate">
     </div>
-
     <div class="des2">
         <img src="../static/asset/person.png" alt="Desperate">
     </div>
-
     <form action="{{ url_for('reset') }}">
         <button class="restart-btn" type="submit">Restart Game</button>
     </form>
+    <!-- Mffkan ms, ini terpaksa pake js buat countdownya -->
     <script src="/static/script/main.js"></script>
 </body>
 
