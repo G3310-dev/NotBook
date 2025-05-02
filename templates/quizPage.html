@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NotMath</title>
+    <link rel="stylesheet" href="../static/stylesheet/main.css">
+    <link rel="stylesheet" href="../static/stylesheet/quiz.css">
+</head>
+
+<body>
+    <h1>Enjoy the <span>Game</span>!!</h1>
+
+    <div class="game-container">
+        <div id="countdown">⏳ 60s</div>
+        <div id="timeout-message" class="timeout-message" style="display: none;">
+            Time's up! Here's your final score
+        </div>
+        <div class="score">Score: {{ score }}</div>
+
+        <form id="game-form" method="POST">
+            <div class="question"><mark>&nbsp;{{ question }}&nbsp;</mark></div>
+            <input type="text" name="answer" placeholder="Your answer" autocomplete="off" autofill="off" required>
+            <br>
+            <button type="submit">Check Answer</button>
+        </form>
+
+        {% if feedback %}
+        <div class="feedback">{{ feedback }}</div>
+        {% endif %}
+    </div>
+
+    <div class="des1">
+        <img src="../static/asset/des.png" alt="Desperate">
+    </div>
+
+    <div class="des2">
+        <img src="../static/asset/person.png" alt="Desperate">
+    </div>
+
+    <form action="{{ url_for('reset') }}">
+        <button class="restart-btn" type="submit">Restart Game</button>
+    </form>
+    <script src="/static/script/main.js"></script>
+</body>
+
+</html>
